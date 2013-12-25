@@ -1,0 +1,16 @@
+Configurations
+
+Josh's configuration files.
+The location of this file should be ~/configurations/README
+
+FOR BASH
+In your .bashrc/.bash_profile file, put "source ~/configurations/bash_settings"
+
+FOR VIM
+To be added...
+
+FOR GIT
+To be added...
+
+FOR SUBLIME
+To be added...
