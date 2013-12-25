@@ -1,0 +1,6 @@
+alias e="subl -n ."
+
+
+function php_syntax(){
+  php -l $@
+}

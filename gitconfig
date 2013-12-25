@@ -1,0 +1,7 @@
+[user]
+  name = Josh Kramer
+  email = jdk3414@rit.edu
+[credential]
+  helper = osxkeychain
+[push]
+  default = simple
