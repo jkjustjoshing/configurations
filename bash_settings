@@ -1,6 +1,18 @@
 alias e="subl -n ."
 
+# Branch name in prompt and prompt coloring
+source ~/configurations/git-prompt.sh
+PS1="\u: \W\[\033[00;33m\]\$(__git_ps1)\[\033[0m\]\$ " #"\h:\W \u\$"
+#\e[m
+# Add git autocomplete
+if [ -f ~/configurations/git-completion.bash ]; then
+  . ~/configurations/git-completion.bash
+fi
 
 function php_syntax(){
   php -l $@
 }
+
+# Color other commands, like "ls"
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
