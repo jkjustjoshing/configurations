@@ -1,5 +1,8 @@
 alias e="subl -n ."
 
+# Will be runnable as "git-host" or "git host"
+alias git-host="t daemon --export-all --reuseaddr --base-path=`pwd`"
+
 # Branch name in prompt and prompt coloring
 source ~/configurations/git-prompt.sh
 PS1="\u: \W\[\033[00;33m\]\$(__git_ps1)\[\033[0m\]\$ " #"\h:\W \u\$"
