@@ -1,7 +1,5 @@
-alias e="subl -n ."
-
 # Will be runnable as "git-host" or "git host"
-alias git-host="t daemon --export-all --reuseaddr --base-path=`pwd`"
+alias git-host="git daemon --export-all --reuseaddr --base-path=`pwd` --informative-errors --verbose --enable=receive-pack"
 
 # Branch name in prompt and prompt coloring
 source ~/configurations/git-prompt.sh
@@ -14,6 +12,10 @@ fi
 
 function php_syntax(){
   php -l $@
+}
+
+port () {
+  eval "lsof -i :$@"
 }
 
 # Color other commands, like "ls"
