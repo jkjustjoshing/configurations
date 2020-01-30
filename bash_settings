@@ -3,11 +3,15 @@ alias git-host="git daemon --export-all --reuseaddr --base-path=`pwd` --informat
 
 # Branch name in prompt and prompt coloring
 source ~/configurations/git-prompt.sh
-PS1="\u: \W\[\033[00;33m\]\$(__git_ps1)\[\033[0m\]\$ " #"\h:\W \u\$"
+if [[ $0 == "/bin/bash" ]]; then
+  PS1="\u: \W\[\033[00;33m\]\$(__git_ps1)\[\033[0m\]\$ " #"\h:\W \u\$"
+else
+  setopt PROMPT_SUBST ; PS1='%n: %c%F{yellow}$(__git_ps1 " (%s)")%f\$ '
+fi
 #\e[m
 # Add git autocomplete
-if [ -f ~/configurations/git-completion.bash ]; then
-  . ~/configurations/git-completion.bash
+if [ -f ~/configurations/git-completion.sh ]; then
+  . ~/configurations/git-completion.sh
 fi
 
 function php_syntax(){
