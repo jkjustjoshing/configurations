@@ -10,7 +10,6 @@ if [[ $0 == "/bin/bash" ]]; then
 else
   setopt PROMPT_SUBST ; PS1='%n: %c%F{yellow}$(__git_ps1 " (%s)")%f\$ '
   # Add git autocomplete
-  # . ~/configurations/git-completion.zsh
   zstyle ':completion:*:*:git:*' script ~/configurations/git-completion.bash
   fpath=(~/.zsh $fpath)
   autoload -Uz compinit && compinit
