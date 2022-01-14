@@ -1,0 +1,90 @@
+// Place your settings in this file to overwrite the default settings
+{
+	"search.exclude": {
+		".tscache": true,
+		"**/node_modules/paychex_app_company_legacy_dtos": false,
+		".tmp": true,
+        "test-reports": true
+    },
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"editor.tabSize": 2,
+	// Controls if opened editors from Quick Open show as preview. Preview editors are reused until they are kept (e.g. via double click or editing).
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+	"git.autofetch": false,
+
+    "editor.scrollBeyondLastLine": false,
+    "terminal.external.osxExec": "iTerm.app",
+	// The command line arguments to use when on the OS X terminal.
+		"terminal.integrated.shellArgs.osx": ["-l"],
+		"terminal.integrated.shell.osx": "/bin/zsh",
+	"editor.minimap.enabled": true,
+	"typescript.suggest.autoImports": false,
+	"javascript.suggest.autoImports": false,
+	"explorer.confirmDragAndDrop": false,
+	"gitlens.advanced.messages": {
+		"suppressCommitHasNoPreviousCommitWarning": false,
+		"suppressCommitNotFoundWarning": false,
+		"suppressFileNotUnderSourceControlWarning": false,
+		"suppressGitVersionWarning": false,
+		"suppressLineUncommittedWarning": false,
+		"suppressNoRepositoryWarning": false,
+		"suppressResultsExplorerNotice": false,
+		"suppressShowKeyBindingsNotice": true,
+		"suppressUpdateNotice": true,
+		"suppressWelcomeNotice": false
+	},
+	"gitlens.keymap": "alternate",
+	"gitlens.historyExplorer.enabled": true,
+	"csv-preview.theme": "grayscale",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"editor.accessibilitySupport": "off",
+	"diffEditor.renderSideBySide": true,
+	"autoimport.semicolon": false,
+	"gitlens.views.fileHistory.enabled": true,
+	"gitlens.views.lineHistory.enabled": true,
+	"breadcrumbs.enabled": true,
+	"terminal.integrated.rendererType": "dom",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"liveshare.featureSet": "insiders",
+	"html.autoClosingTags": false,
+	"jest.pathToJest": "",
+	"editor.largeFileOptimizations": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"git.enableCommitSigning": true,
+	"githubIssues.queries": [
+		{
+			"label": "My Issues",
+			"query": "default"
+		},
+		{
+			"label": "Created Issues",
+			"query": "author:${user} state:open repo:${owner}/${repository} sort:updated-desc"
+		}
+	],
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"explorer.compactFolders": false,
+	"vscode-graphql.debug": true,
+	"graphql-config.dotEnvPath": "./.env",
+	"extensions.ignoreRecommendations": false,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"typescript.autoClosingTags": false,
+	"typescript.preferences.quoteStyle": "single",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"search.followSymlinks": false,
+	"editor.bracketPairColorization.enabled": true,
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"workbench.colorTheme": "Solarized Light",
+	"editor.guides.bracketPairs": true
+}
