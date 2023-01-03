@@ -23,6 +23,11 @@ port () {
   eval "lsof -i :$@"
 }
 
+serve () {
+  python3 -m http.server --cgi ${1:-8000}
+}
+
 # Color other commands, like "ls"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+``
