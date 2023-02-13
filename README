@@ -4,7 +4,7 @@ Josh's configuration files.
 The location of this file should be ~/configurations/README
 
 FOR BASH
-In your .bashrc/.bash_profile file, put "source ~/configurations/bash_settings"
+In your .bashrc/.bash_profile or .zshrc file, put "source ~/configurations/bash_settings"
 
 FOR VIM
 To be added...
