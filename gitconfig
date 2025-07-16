@@ -3,22 +3,34 @@
 	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
 	lg = !"git lg1"
-[user]
-	email = josh@kramer.run
-	name = Josh Kramer
-	signingkey = A1924D6E9C6C12F3
+  branch-stash = !git add --all && git commit -m "STASH" --no-verify
+  branch-pop = ![[ "STASH" == $(git log -1 HEAD --pretty=format:%B | cat) ]] && (git reset HEAD^) || (echo "No stash found")
+	checkout-commit = !git checkout $(git rev-parse --short HEAD)
+	prune-all = "!git remote prune origin | grep '\\[pruned\\] origin/' | sed 's|.*origin/||' | while read branch; do if git branch -D \"$branch\" > /dev/null 2>&1; then echo \"\\033[1;32mDeleted:\\033[0m $branch\"; elif [ \"$branch\" = \"$(git branch --show-current)\" ]; then echo \"\\033[1;41;97mTrying to delete current branch:\\033[0m $branch\"; else echo \"\\033[1;33mAlready deleted:\\033[0m $branch\"; fi; done | sort | tee /dev/tty | grep -q . || echo \"No branches to delete\""
+[core]
+	editor = vim
 [commit]
 	gpgsign = true
-[includeIf "gitdir:~/Documents/development/measuresforjustice/"]
-	path = .gitconfig-mfj
+# [includeIf "gitdir:~/Documents/development/measuresforjustice/"]
+# 	path = .gitconfig-mfj
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [push]
-	default = current
+	autoSetupRemote = true
 [gpg]
-	program = /usr/local/bin/gpg
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEuXNADeSOEQHFmIkwwG49Oepbnac/vQQmYnT9NpBxE
+	name = Josh Kramer
+	email = josh@kramer.run
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
