@@ -20,6 +20,7 @@
 	required = true
 [push]
 	autoSetupRemote = true
+	default = current
 [gpg]
 	format = ssh
 [gpg "ssh"]
